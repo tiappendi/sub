@@ -1,37 +1,3 @@
-
-
-// (function(w,d,s,l){
-//     w[l]=w[l]||[];
-//     w[l].push({
-//         'start':new Date().getTime(),
-//         'uno':'field'
-//     });
-//     var f=d.getElementsByTagName(s)[0],
-//         j=d.createElement(s),
-//         dl=l!='miForm'?'&l='+l:'';
-//         j.async=true;
-// })
-// (window,document,'script','miForm');
-
-// var form = new Array();
-// form.field1 = [];
-
-
-// myCar.model = "Mustang";
-// myCar.year = 1969;
-
-// var my = [
-//     "field1", {
-//         "id": {
-//             "visibile": valido_o_no
-//         }
-//     }
-    
-// ];
-// for(i=0; i<5; i++) {
-//     window.form.field1.push({"invisible":0});
-// }
-
 var showHide = function (elem) {
     document.getElementById('attendee_container').style.display = 'block';
     var elements = document.querySelectorAll(".wrap");
@@ -52,20 +18,27 @@ var showHide = function (elem) {
         }
     });
     testAnim('bounceInDown');
-}
+};
+
+
+////////////////////////////////////////////////////////////////////////
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
     console.log("DOM completamente caricato e analizzato");
 
+    // field_1
     var glInput = document.querySelectorAll('#attendee_container input');
-    console.log(glInput);
+    //console.log(glInput);
+
     Array.from(glInput).forEach(function(el) {
         el.addEventListener('click', function () {
-            // check if all visilble inputs are not empty
+
             var visibleInputs = document.querySelectorAll('.d-block input');
             console.log(visibleInputs);
             
+            // check if all visilble inputs are not empty
             Array.from(visibleInputs).forEach(function(al,i) {
                 
                 // var validInputsCheck = function (e) {
@@ -96,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         document.getElementById('step_2').disabled = true;
                     }
                 });
+                // }
 
             });
 
@@ -109,21 +83,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(radios);
     Array.from(radios).forEach(function(el) {
         el.addEventListener('click', function () {
-    
             el.checked ? document.getElementById('company_name_wrap').style.display = 'block' : document.getElementById('company_name_wrap').style.display = 'none';
-            
-
         });
     });
+
     // seconda parte radios
     var radios2 = document.querySelectorAll('#special_accommodations_toggle_on,#special_accommodations_toggle_off');
-    console.log(radios2);
-    Array.from(radios).forEach(function(el) {
+    Array.from(radios2).forEach(function(el) {
         el.addEventListener('click', function () {
-            
             if (el.checked) {
-                var inputvalid = document.getElementById('company_name');
-                if (inputvalid.value != "") {
+                var inputValid = document.getElementById('company_name');
+                if (inputValid.value != "") {
                     document.getElementById('step_3').disabled = false;
                 } else {
                     document.getElementById('step_3').disabled = true;   
@@ -131,6 +101,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
 
         });
+    });
+
+    var rock = document.getElementById('rock');
+    rock.addEventListener('click', function(){
+        rock.checked === true ? document.getElementById('submit_button').disabled = false : document.getElementById('submit_button').disabled = true
     });
 });
 
