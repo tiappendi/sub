@@ -1,0 +1,320 @@
+**********/
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+    font-size: 2.6rem;
+}
+
+html {
+    box-sizing: border-box;
+    background: radial-gradient(circle, rgba(107,107,107,1) 0%, rgba(0,0,0,1) 100%);
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+       -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+  }
+/** BASE **/
+
+/**********/
+body {
+  margin: 0;
+  padding-top: 10px;
+  font-family: "Arial", sans-serif;
+  background: rgb(107,107,107);
+  background: radial-gradient(circle, rgba(107,107,107,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+fieldset {
+    margin: 0 1rem;
+    height: 100%;
+    flex: 1;
+}
+
+/**********/
+/** GRID **/
+/**********/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+@media only screen and (min-width: 970px) {
+  .container {
+    width: 970px;
+  }
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.column {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  max-width: 100%;
+  max-width: calc(100% - 10px);
+  min-height: 1px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+@media only screen and (min-width: 640px) {
+  .column {
+    -webkit-flex-basis: 0;
+        -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+  }
+}
+
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+
+/**********/
+/** DEMO **/
+/**********/
+.column--demo {
+  min-height: 100px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 10px;
+  color: #000;
+  background-color: #eee;
+}
+
+
+
+
+#step_1 {
+ background-color: #a9eac5;
+}
+#step_2 {
+    background-color: #aadbeb;
+}
+#step_3 {
+    background-color: #ecc6aa;
+}
+
+label[for^="num_attendees"] {
+  font-style: italic;
+  display: inline;
+}
+.desc {
+    font-size: 2rem;
+    font-family: Italic;
+}
+#attendee_container {
+    display: none;
+}
+
+#attendee_container h3 {
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 1rem 0 .5rem 0;
+}
+
+#attendee_container label {
+    font-size: .8rem;
+}
+
+#attendee_container > div {
+    display: inline;
+}
+#attendee_container input {
+    width: 9rem;
+    height: 1rem;
+}
+#num_attendees {
+    font-size: .7rem;
+}
+#step_2 [for="company_name"], #step_2 div p {
+  margin-top: 1rem;
+}
+
+
+label.desc, p.desc {
+    font-weight: 600;
+    font-family: Italic;
+    font-size: 1.3rem;
+    /* display: inline; */
+}
+legend {
+    background-color: white;
+    width: 25%;
+    padding: 0 5px;
+    border-radius: 8px;
+    max-width: 100%;
+    font-weight: 800;
+    font-size: 1rem;
+}
+h1 {
+    color: #fff;
+}
+h1 span {
+    color: #418dcc;
+}
+
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .column {
+  width: 32%;
+}
+
+fieldset:disabled {
+    opacity: 0.4;
+    /* cursor: not-allowed; */
+}
+
+#step1_result {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 2rem 0 4rem 0;
+}
+
+#step1_result:before {
+  content: " "; 
+  display: block;
+  border: solid 3rem #c1fcbd; 
+  border-radius: 50%; 
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 7rem;
+  
+  margin-top: -0.5em;
+}
+#step1_result:after {
+  content: " ";
+  display: block;
+  width: 2.3rem;
+  height: 3.8rem;
+  border: solid #6bbf30;
+  border-width: 0 0.6rem 0.6rem 0; 
+  position: absolute;
+  left: 8.6rem;
+  /* bottom: 0rem;
+  top: 4rem; */
+  margin-top: -0.2em;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* animazione */
+  .bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes bounceInDown {
+    0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+    }
+    
+    60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+    }
+    
+    75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+    }
+    
+    90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+    }
+    
+    100% {
+    -webkit-transform: none;
+    transform: none;
+    }
+  }
+  
+  @keyframes bounceInDown {
+    0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+    }
+    
+    60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+    }
+    
+    75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+    }
+    
+    90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+    }
+    
+    100% {
+    -webkit-transform: none;
+    transform: none;
+    }
+  } 
+
+  @media (max-width: 400px) {
+    .row {
+      display: block;
+    }
+  }
