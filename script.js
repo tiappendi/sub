@@ -1,4 +1,4 @@
-var showHide = function (elem) {
+function showHide (elem) {
     document.getElementById('attendee_container').style.display = 'block';
     var elements = document.querySelectorAll(".wrap");
     // it worksss
@@ -20,7 +20,14 @@ var showHide = function (elem) {
     testAnim('bounceInDown');
 };
 
-
+function testAnim(x) {
+    var attendee = document.getElementById('attendee_container');
+    attendee.className = '';
+    attendee.classList.add(x,'animated');
+    setTimeout(function() {
+        attendee.className = '';
+    }, 1000);
+}
 ////////////////////////////////////////////////////////////////////////
 
 
@@ -111,11 +118,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 
-function testAnim(x) {
-    var attendee = document.getElementById('attendee_container');
-    attendee.className = '';
-    attendee.classList.add(x,'animated');
-    setTimeout(function() {
-        attendee.className = '';
-    }, 1000);
-}
+
