@@ -26,6 +26,7 @@ html {
 /** BASE **/
 
 /**********/
+
 body {
   margin: 0;
   padding-top: 10px;
@@ -36,8 +37,8 @@ body {
 
 fieldset {
     margin: 0 1rem;
-    height: 100%;
     flex: 1;
+    border-style: none;
 }
 
 /**********/
@@ -49,16 +50,21 @@ fieldset {
   box-sizing: border-box;
   
 }
+[type="radio"] {
+  background-color: aqua;
+  color: #fff;
+}
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 5px;
-  padding-left: 5px;
+#page-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 600px;
 }
 @media only screen and (min-width: 970px) {
   .container {
     width: 970px;
+    padding: 1rem;
   }
 }
 
@@ -126,32 +132,51 @@ fieldset {
     background-color: #ecc6aa;
 }
 
-label[for^="num_attendees"] {
+label[for^="num_attendees"], .wrap label {
   font-style: italic;
+  font-family: 'Times', serif;
   display: inline;
 }
 .desc {
-    font-size: 2rem;
-    font-family: Italic;
+  font-family: 'Times', serif;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  /* font-family: inherit; */
+  font-size: 2rem;
 }
 #attendee_container {
-    display: none;
+  transition:flex 0.3s ease-out;
+  display: none;
+  height:auto;
+  flex:1;
+}
+
+.collapsed {
+  flex: 0;
+}
+
+fieldset {
+  padding: 1rem 2.7em 1rem 1rem;
 }
 
 #attendee_container h3 {
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 1rem 0 .5rem 0;
 }
 
 #attendee_container label {
     font-size: .8rem;
+    font-family: auto;
 }
-
-#attendee_container > div {
+.wrap {
+  margin-bottom: .4rem;
+}
+/* #attendee_container > div {
     display: inline;
-}
-#attendee_container input {
+} */
+
+input[type="text"] {
     width: 9rem;
     height: 1rem;
 }
@@ -162,21 +187,19 @@ label[for^="num_attendees"] {
   margin-top: 1rem;
 }
 
-
 label.desc, p.desc {
-    font-weight: 600;
-    font-family: Italic;
-    font-size: 1.3rem;
-    /* display: inline; */
+    font-size: 1.1rem;
 }
+
 legend {
     background-color: white;
-    width: 25%;
-    padding: 0 5px;
-    border-radius: 8px;
+    width: 30%;
+    height: 2rem;
+    padding: 2% 4%;
+    border-radius: 7px;
     max-width: 100%;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 h1 {
     color: #fff;
@@ -191,6 +214,7 @@ h1 span {
 }
 .flex-grid-thirds .column {
   width: 32%;
+  height: min-content;
 }
 
 fieldset:disabled {
@@ -202,39 +226,49 @@ fieldset:disabled {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  margin: 2rem 0 4rem 0;
+  margin: 2rem 0;
 }
 
 #step1_result:before {
   content: " "; 
   display: block;
-  border: solid 3rem #c1fcbd; 
+  border: solid 2.5rem #c1fcbd; 
   border-radius: 50%; 
   height: 0;
   width: 0;
   position: absolute;
   left: 7rem;
-  
-  margin-top: -0.5em;
+	box-shadow: 0 2px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 2px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 2px rgba(0,0,0,0.3);
+	-o-box-shadow: 0 2px rgba(0,0,0,0.3);
 }
 #step1_result:after {
   content: " ";
   display: block;
-  width: 2.3rem;
-  height: 3.8rem;
+  width: 2rem;
+  height: 3rem;
   border: solid #6bbf30;
   border-width: 0 0.6rem 0.6rem 0; 
   position: absolute;
   left: 8.6rem;
-  /* bottom: 0rem;
-  top: 4rem; */
-  margin-top: -0.2em;
+  bottom: 2.5rem;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
+input#submit_button {
+  margin: 1.5rem 0;
+  font-size: .7rem;
+}
+
+[name="company_name_toggle_group"], [for^="company_name_toggle_"] {
+  display: inline;
+  font-family: 'Times', serif;
+  font-style: italic;
+}
 
 /* animazione */
   .bounceInDown {
