@@ -3,7 +3,7 @@ function showHide (elem) {
         jQuery('#attendee_container').hide("linear").show("linear").fadeIn();
         var elements = document.querySelectorAll(".wrap");
         Array.from(elements).forEach(function(element,i) { 
-            i >= elem.selectedIndex ? jQuery(element).fadeOut("fast").addClass('d-none').removeClass('d-block') : jQuery(element).fadeIn("fast").addClass('d-block').removeClass('d-none');
+            i >= elem.selectedIndex ? jQuery(element).fadeOut("fast").removeClass('d-block').addClass('d-none') : jQuery(element).fadeIn("fast").removeClass('d-none').addClass('d-block');
         });
         setTimeout(function(){
             validEqVisib();
@@ -66,7 +66,6 @@ function companyName() {
         var radios = document.querySelectorAll('#company_name_toggle_on,#company_name_toggle_off');
         Array.from(radios).forEach(function(el) {
             el.addEventListener('click', function () {
-                var rad1_checked = 0;
                 if (el.checked) {
                     document.getElementById('company_name_wrap').style.display = 'block';
                     rad1_checked = 1;
@@ -84,6 +83,7 @@ function companyName() {
         Array.from(radios2).forEach(function(el) {
             el.addEventListener('click', function () {
                 if (el.checked) {
+                    rad2_checked = 1;
                     companyName();
                 }
             });
@@ -95,7 +95,7 @@ function companyName() {
         });
 
         document.getElementById('company_name').addEventListener('keyup', function () {
-            companyName();
+            rad1_checked && rad2_checked ? companyName() : console.log('nonvalido');
         });
 
     });
