@@ -306,44 +306,6 @@ input#submit_button {
   font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
 }
 
-/* radio */
-/* [type="radio"]:checked, [type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-}
-[type="radio"]:checked + label, [type="radio"]:not(:checked) + label {
-    position: relative;
-    padding-left: 28px;
-    cursor: pointer;
-    line-height: 20px;
-    display: inline-block;
-    color: #666;
-}
-[type="radio"]:checked + label:before, [type="radio"]:not(:checked) + label:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 4px;
-    width: 12px;
-    height: 12px;
-    border: 1px solid rgb(0,0,0,.3);
-    border-radius: 100%;
-    background: #8fc3f9;
-}
-[type="radio"]:checked + label:after, [type="radio"]:not(:checked) + label:after {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: #000;
-    position: absolute;
-    top: 8px;
-    left: 4px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-} */
-/* custom input end */
-
 @media (max-width: 400px) {
   .row {
     display: block;
