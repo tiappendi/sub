@@ -27,6 +27,23 @@ function testAnim(x) {
 //     }, 1000);
 }
 
+function validEqVisib() {
+    var visible = document.querySelectorAll('.wrap.d-block');
+    var valid = document.querySelectorAll('.d-block .valid');
+    if (valid.length == visible.length){
+        document.querySelector('#step1_result').classList.add('d-block');
+        document.getElementById('step_2').disabled = false;
+    }else {
+        document.querySelector('#step1_result').classList.remove('d-block');
+        document.getElementById('step_2').disabled = true;
+    }
+}
+
+function companyName() {
+    var inputValid = document.getElementById('company_name');
+    inputValid.value != "" ? document.getElementById('step_3').disabled = false : document.getElementById('step_3').disabled = true;
+}
+
 (function(){
     "use strict";
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -116,25 +133,6 @@ function testAnim(x) {
             } else {
                 document.getElementById('attendee_container').style.display = 'none';
             }
-        }
-    
-        function validEqVisib() {
-            var visible = document.querySelectorAll('.wrap.d-block');
-            var valid = document.querySelectorAll('.d-block .valid');
-            if (valid.length == visible.length){
-                document.querySelector('#step1_result').classList.add('d-block');
-                document.getElementById('step_2').disabled = false;
-            }else {
-                document.querySelector('#step1_result').classList.remove('d-block');
-                document.getElementById('step_2').disabled = true;
-            }
-        }
-        
-        function companyName() {
-            var inputValid = document.getElementById('company_name');
-            inputValid.value != "" ? document.getElementById('step_3').disabled = false : document.getElementById('step_3').disabled = true;
-        }
-    
-        
+        }     
     });
 })();
