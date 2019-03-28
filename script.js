@@ -72,11 +72,13 @@ function companyName() {
         var radios = document.querySelectorAll('#company_name_toggle_on,#company_name_toggle_off');
         Array.from(radios).forEach(function(el) {
             el.addEventListener('click', function () {
-                if (el.checked) {
+                if (el.checked && el.getAttribute('id') == 'company_name_toggle_on') {
                     document.getElementById('company_name_wrap').style.display = 'block';
+                    $('#step2_result').show();
                     rad1_checked = 1;
                 } else {
                     document.getElementById('company_name_wrap').style.display = 'none';
+                    $('#step2_result').hide();
                     rad1_checked = 0;
                 }
                 companyName();

@@ -198,7 +198,7 @@ fieldset:disabled {
   margin: 2rem 0;
 }
 
-#step_result:before, #step1_result:before {
+#step1_result:before, #step2_result:before {
   content: " "; 
   display: block;
   border: solid 2.5rem #c1fcbd; 
@@ -213,7 +213,7 @@ fieldset:disabled {
 	-o-box-shadow: 0 2px rgba(0,0,0,0.3);
 }
 
-#step1_result:after, #step1_result:after {
+#step1_result:after, #step2_result:after {
   content: " ";
   display: block;
   width: 2rem;
