@@ -25,14 +25,14 @@ function validEqVisib() {
     }
 }
 
-function companyName() {
+function companyName(rad1_checked, rad2_checked) {
     var inputValid = document.getElementById('company_name');
-    if( inputValid.value != "") {
+    if( inputValid.value != "" && rad1_checked && rad2_checked) {
         document.getElementById('step_3').disabled = false;
-        jQuery('step2_result').show();
+        jQuery('#step2_result').show();
     } else {
         document.getElementById('step_3').disabled = true;
-        jQuery('step2_result').hide();
+        jQuery('#step2_result').hide();
     } 
 }
 
@@ -74,14 +74,12 @@ function companyName() {
             el.addEventListener('click', function () {
                 if (el.checked && el.getAttribute('id') == 'company_name_toggle_on') {
                     document.getElementById('company_name_wrap').style.display = 'block';
-                    $('#step2_result').show();
                     rad1_checked = 1;
                 } else {
                     document.getElementById('company_name_wrap').style.display = 'none';
-                    $('#step2_result').hide();
                     rad1_checked = 0;
                 }
-                companyName();
+                companyName(rad1_checked, rad2_checked);
             });
         });
         
@@ -92,7 +90,7 @@ function companyName() {
             el.addEventListener('click', function () {
                 if (el.checked) {
                     rad2_checked = 1;
-                    companyName();
+                    companyName(rad1_checked, rad2_checked);
                 }
             });
         });
@@ -103,7 +101,7 @@ function companyName() {
         });
 
         document.getElementById('company_name').addEventListener('keyup', function () {
-            rad1_checked && rad2_checked ? companyName() : console.log('nonvalido');
+            rad1_checked && rad2_checked ? companyName(rad1_checked, rad2_checked) : console.log('nonvalido');
         });
 
     });
