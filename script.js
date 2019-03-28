@@ -27,7 +27,13 @@ function validEqVisib() {
 
 function companyName() {
     var inputValid = document.getElementById('company_name');
-    inputValid.value != "" ? document.getElementById('step_3').disabled = false : document.getElementById('step_3').disabled = true;
+    if( inputValid.value != "") {
+        document.getElementById('step_3').disabled = false;
+        jQuery('step2_result').show();
+    } else {
+        document.getElementById('step_3').disabled = true;
+        jQuery('step2_result').hide();
+    } 
 }
 
 (function(){

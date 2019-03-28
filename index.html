@@ -14,7 +14,7 @@
 
             <form action="#" method="post" class="row flex-grid-thirds">
 
-                <fieldset id="step_1" class="col column">
+                <fieldset id="step_1" class="column">
                     <legend>Step 1</legend>
                     <label for="num_attendees" class="desc">
                         How many people will be attending?
@@ -64,7 +64,7 @@
                     <div>
                 </fieldset>
 
-                <fieldset id="step_2" class="col column" disabled> 
+                <fieldset id="step_2" class="column" disabled> 
                     <legend>Step 2</legend>
                     <p class="desc">
                         Would you like your company name on your badges?
@@ -89,6 +89,8 @@
                         &emsp;
                         <input type="radio" id="special_accommodations_toggle_off" name="special_accommodations_toggle">
                         <label for="special_accommodations_toggle_off">No</label>
+
+                        <div id="step2_result" style="display:none"></div>
                     </div>
                     <!-- <div id="special_accommodations_wrap">
                         <label for="special_accomodations_text">
